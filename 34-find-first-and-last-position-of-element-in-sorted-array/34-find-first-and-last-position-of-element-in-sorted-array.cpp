@@ -1,20 +1,39 @@
 class Solution {
-public:
-    vector<int> searchRange(vector<int>& nums, int target) {
-        if(!nums.size()) return {-1, -1};
-        if(nums.size() == 1) {
-            if(nums[0] == target) {
-                return {0, 0};
+private:
+    int findFirst(vector<int>& nums, int target) {
+        int lo = 0, hi = nums.size() - 1;
+        int res = -1;
+        while(lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if(nums[mid] < target) {
+                lo = mid + 1;
+            }else if(nums[mid] > target) {
+                hi = mid - 1;
             }else {
-                return {-1, -1};
+                res = mid;
+                hi = mid - 1;
             }
         }
-        auto it1 = lower_bound(nums.begin(), nums.end(), target);
-        auto it2 = upper_bound(nums.begin(), nums.end(), target);
-        int start = it1 - nums.begin();
-        int end = (it2 - 1) - nums.begin();
-        // cout << start << " " << end << "\n";
-        if(start <= nums.size() - 1 && end <= nums.size() - 1 && nums[start] == target && nums[end] == target) return {start, end};
-        return {-1, -1};
+        return res;
+    }
+    int findLast(vector<int>& nums, int target) {
+        int lo = 0, hi = nums.size() - 1;
+        int res = -1;
+        while(lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if(nums[mid] < target) {
+                lo = mid + 1;
+            }else if(nums[mid] > target) {
+                hi = mid - 1;
+            }else {
+                res = mid;
+                lo = mid + 1;
+            }
+        }
+        return res;
+    }
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        return {findFirst(nums, target), findLast(nums, target)};
     }
 };
