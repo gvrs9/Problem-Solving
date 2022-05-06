@@ -11,7 +11,6 @@ class Solution {
 public:
     int guessNumber(int n) {
         int low = 1, high = n;
-        int mid;
         while(true) {
             int mid = low + (high - low) / 2;
             if(guess(mid) == 0) {
@@ -22,6 +21,5 @@ public:
                 high = mid - 1;
             }
         }
-        return mid;
     }
 };
