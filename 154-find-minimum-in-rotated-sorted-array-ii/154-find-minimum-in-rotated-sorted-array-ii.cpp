@@ -15,7 +15,7 @@ public:
         return nums[start];
         */
         
-        //This works. it gives perfect pivot also along with mini ele for the test cases!!
+        //This Solution now works. it gives perfect pivot also along with mini ele for the test cases!!
         if(nums.size() == 0) return INT_MIN;
         int start = 0, end = nums.size() - 1;
         while(start < end) {
