@@ -13,7 +13,7 @@ public:
                 if(currSum < target) j++;
                 else k--;
             }
-            // while(i + 1 < nums.size() && nums[i + 1] == nums[i]) i++;
+            while(i + 1 < nums.size() && nums[i + 1] == nums[i]) i++;
         }
         return closest;
     }
