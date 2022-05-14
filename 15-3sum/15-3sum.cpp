@@ -7,7 +7,9 @@ public:
             return {};
         }
         vector<vector<int> > res;
-        
+        // consider this test case if any doubt on inner while loops(not the j < k one. it is for two pointer approach). Those three individual while loops are there to skip duplicates and avoid duplicate triplets!!
+        // [-4, -4, -4, -4, -1, -1, -1, -1, 0, 1, 2, 2, 2, 2, 2]
+        // This question tells the power of sorting and power of Two Pointer Approach!!
         sort(nums.begin(), nums.end());
         for(int i = 0; i < (int)nums.size(); i++) {
             int j = i + 1, k = nums.size() - 1;
