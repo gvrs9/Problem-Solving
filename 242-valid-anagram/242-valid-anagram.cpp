@@ -2,11 +2,9 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
         if(s.size() != t.size()) return false;
-        int hsh1[26] = {0};
-        int hsh2[26] = {0};
-        for(auto& x : s) hsh1[x - 'a']++;
-        for(auto& x : t) hsh2[x - 'a']++;
-        for(auto& x : t) if(hsh1[x - 'a'] != hsh2[x - 'a']) return false;
+        char count[26] = {0};
+        for(int i = 0; i < (int)s.size(); i++) count[s[i] - 'a']++, count[t[i] - 'a']--;
+        for(auto& x : t) if(count[x - 'a']) return false;
         return true;
     }
 };
