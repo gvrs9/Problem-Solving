@@ -8,27 +8,30 @@ class Solution {
         bool isSafe(vector<vector<int> >& grid,int row, int col, int m, int n) {
             return (row >= 0) && (row < m) && (col >= 0) && (col < n);
         }
-        void dfs(vector<vector<int> >& grid,int i, int j, int& indiCnt, int m, int n) {
+        void dfs(vector<vector<int> >& grid,int i, int j, int& indiCnt,int& zeroCnt, int m, int n) {
             for(int k = 0; k < 8; k++) {
                 if(isSafe(grid, i + vp[k].first, j + vp[k].second, m, n) && grid[i + vp[k].first][j + vp[k].second]) {
                     grid[i + vp[k].first][j + vp[k].second] = 0;
+                    zeroCnt++;
                     indiCnt++;
-                    dfs(grid, i + vp[k].first, j + vp[k].second, indiCnt, m, n);
+                    dfs(grid, i + vp[k].first, j + vp[k].second, indiCnt, zeroCnt, m, n);
                 }
             }
         }
     public:
     vector<pair<int, int> > vp = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
     int findMaxArea(vector<vector<int>>& grid) {
-        int m = grid.size(), n = grid[0].size();
+        int m = grid.size(), n = grid[0].size(), zeroCnt = 0;
         int maxCnt = INT_MIN;
         
         for(int i = 0; i < m; i++) {
+            if(zeroCnt == m * n) break;
             for(int j = 0; j < n; j++) {
                 if(grid[i][j]) {
                     grid[i][j] = 0;
+                    zeroCnt++;
                     int indiCnt = 1;
-                    dfs(grid, i, j, indiCnt, m, n);
+                    dfs(grid, i, j, indiCnt, zeroCnt, m, n);
                     maxCnt = max(maxCnt, indiCnt);
                 }
             }
