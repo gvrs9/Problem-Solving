@@ -13,11 +13,26 @@ private:
     }
 public:
     int islandPerimeter(vector<vector<int>>& grid) {
-        int m = grid.size(), n = grid[0].size();
+        int m = grid.size(), n = grid[0].size(), res = 0;
+        /*
         for(int i = 0; i < m; i++)
             for(int j = 0; j < n; j++)
                 if(grid[i][j])
-                    return dfs(grid, i, j, m, n);
-        return 0;
+                    return dfs(grid, i, j, m, n); // O(m * n) time and stack space for space complexity
+        */
+        
+        for(int i = 0; i < m; i++) { // O(m * n) time and O(1) space
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j]) {
+                    res += 4;
+                    if(j > 0 && grid[i][j - 1]) res--;
+                    if(i > 0 && grid[i - 1][j]) res--;
+                    if(j + 1 < n && grid[i][j + 1]) res--;
+                    if(i + 1 < m && grid[i + 1][j]) res--;
+                }
+            }
+        }
+        
+        return res;
     }
 };
