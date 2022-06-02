@@ -4,12 +4,7 @@ class Solution {
 public:
     int countHomogenous(string s) {
         int res(0);
-        // char prevChar = s[0], currChar = s[0];
-        for(long long int i = 1, j = 0; i <= (int)s.size(); i++) {
-            if(i == s.size() || s[i - 1] != s[i]) {
-                res = (res + (((i - j) * (i - j + 1)) / 2)) % mod, j = i;
-            }
-        }
+        for(long long int i = 1, j = 0; i <= (int)s.size(); i++) if(i == s.size() || s[i - 1] != s[i]) res = (res + (((i - j) * (i - j + 1)) / 2)) % mod, j = i;
         return res;
     }
 };
