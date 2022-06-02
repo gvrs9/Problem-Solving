@@ -6,9 +6,7 @@ public:
             if(s[i] == s[i - 1]) {
                 cnt++;
                 maxi = max(maxi, cnt);
-                continue;
-            }
-            cnt = 1;
+            }else cnt = 1;
         }
         return maxi;
     }
