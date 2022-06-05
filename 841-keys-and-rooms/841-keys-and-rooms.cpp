@@ -11,6 +11,6 @@ public:
         vector<bool> visited(rooms.size(), false);
         int cnt = 0;
         dfs(rooms, visited, 0, cnt);
-        return (cnt != (int)rooms.size() ? false : true);
+        return (cnt == (int)rooms.size() ? true : false);
     }
 };
