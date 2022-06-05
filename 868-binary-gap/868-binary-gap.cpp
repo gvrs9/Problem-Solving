@@ -3,7 +3,7 @@ public:
     int binaryGap(int n) {
         int j = -1, maxiDistance = 0;
         for (int i = 0; i < 32; i++) {
-            if ((n >> i) & 1) {
+            if ((n >> i) & 1) { // cout << (((22 >> 0) & 1) == 1) << "\n"; // n & 1 == 1 --> odd && == 0 --> even
                 if (j != -1) maxiDistance = max(maxiDistance, i - j);
                 j = i;
             }
