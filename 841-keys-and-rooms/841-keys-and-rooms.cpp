@@ -1,7 +1,7 @@
 class Solution {
 private:
     void dfs(vector<vector<int> >& rooms, unordered_set<int>& s, int key, int& cnt) {
-        if(s.find(key) == s.end()) {
+        if(!s.count(key)) {
             cnt++, s.insert(key);
             for(auto& x : rooms[key]) dfs(rooms, s, x, cnt);
         }
