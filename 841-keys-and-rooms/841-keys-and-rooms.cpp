@@ -1,4 +1,20 @@
 class Solution {
+public:
+    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        stack<int> st;st.push(0);
+        unordered_set<int> s = {0};
+        while(!st.empty()) {
+            int key = st.top();
+            st.pop();
+            s.insert(key);
+            for(int& x : rooms[key]) if(!s.count(x)) st.push(x);
+        }
+        return (rooms.size() == s.size()) ? true : false;
+    }
+};
+
+/*
+class Solution {
 private:
     void dfs(vector<vector<int> >& rooms, unordered_set<int>& s, int key) {
         if(!s.count(key)) {
@@ -13,6 +29,7 @@ public:
         return (s.size() == rooms.size() ? true : false);
     }
 };
+*/
 
 /*
 // Approach - 3 --> Iterative dfs!!
