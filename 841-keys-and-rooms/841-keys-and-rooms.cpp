@@ -1,4 +1,21 @@
 class Solution {
+private:
+    void dfs(vector<vector<int> >& rooms, unordered_set<int>& s, int key) {
+        if(!s.count(key)) {
+            s.insert(key);
+            for(auto& x : rooms[key]) dfs(rooms, s, x);
+        }
+    }
+public:
+    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        unordered_set<int> s;
+        dfs(rooms, s, 0);
+        return (s.size() == rooms.size() ? true : false);
+    }
+};
+
+/*
+class Solution {
 public:
     bool canVisitAllRooms(vector<vector<int>>& rooms) {
         stack<int> st;st.push(0);
@@ -16,6 +33,7 @@ public:
         return (rooms.size() == s.size()) ? true : false;
     }
 };
+*/
 
 /*
 // Approach - 1
