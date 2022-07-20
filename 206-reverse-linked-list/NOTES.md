@@ -1,30 +1,44 @@
-lnBreak;
+```
+#include "iostream"
+#include "typeinfo"
+#define ln "\n"
+#define lnBreak cout << "---------------\n"
+using namespace std;
 ​
-// Approach - 2(i) --> Recursive --> T.C - O(N), S.C - O(N)
-print(head2);
-cout << head2 -> data << " ";
-cout << tail2 -> data << ln;
+class Node {
+public:
+int data;
+Node* next;
 ​
-reverseLinkedListRecursive1(head2, tail2);
+Node(int data) {
+/*
+(*this).data = data;
+(*this).next = NULL;
+*/
 ​
-print(head2);
-cout << head2 -> data << " ";
-cout << tail2 -> data << ln;
+// or
 ​
-lnBreak;
-​
-// Approach - 2(ii) --> Recursive --> T.C - O(N), S.C - O(N)
-print(head2);
-cout << head2 -> data << " ";
-cout << tail2 -> data << ln;
-​
-reverseLinkedListRecursive2(head2, tail2);
-​
-print(head2);
-cout << head2 -> data << " ";
-cout << tail2 -> data << ln;
-​
-lnBreak;
+this -> data = data;
+this -> next = NULL;
 }
 ​
-```
+~Node() {
+int value = this -> data;
+// memory free
+if (this -> next != NULL) {
+this -> next = NULL;
+delete next;
+}
+cout << " memory is free for node with data " << value << endl;
+}
+};
+​
+void insertAtHead(Node* &head, int data) {
+Node* newNode = new Node(data);
+// cout << newNode -> data << ln;
+newNode -> next = head;
+head = newNode;
+}
+​
+void insertAtTail(Node* &tail, int data) {
+Node* newNode = new Node(data);
