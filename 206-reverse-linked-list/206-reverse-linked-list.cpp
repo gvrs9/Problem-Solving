@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         // Iterative Approach
-        // if(head == __null || head -> next == __null) return head;
+        if(head == __null || head -> next == __null) return head;
         ListNode* prev = __null;
         ListNode* curr = head;
         ListNode* forward = __null;
