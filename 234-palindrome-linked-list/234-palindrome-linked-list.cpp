@@ -20,6 +20,38 @@ public:
         ListNode* forward = head;
         
         while(fast != __null && fast -> next != __null) {
+            forward = slow -> next;
+            fast = fast -> next -> next;
+            slow -> next = prev;
+            prev = slow;
+            // slow = slow -> next;
+            slow = forward; // same as above commented line!!
+        }
+        if(fast != __null) slow = slow -> next;
+        
+        while(slow != __null) {
+            if(slow -> val != prev -> val) return false;
+            slow = slow -> next, prev = prev -> next;
+        }
+        return true;
+    }
+};
+
+/*
+// Find middle while reversing the first half check!!
+
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        // Find middle while reversing the first half check!!
+        // https://leetcode.com/problems/palindrome-linked-list/discuss/1137696/Short-and-Easy-w-Explanation-or-T-%3A-O(N)-S-%3A-O(1)-Solution-using-Fast-and-Slow
+        if(head == __null) return true;
+        ListNode* slow = head; // slow is basically curr!!
+        ListNode* fast = head;
+        ListNode* prev = __null;
+        ListNode* forward = head;
+        
+        while(fast != __null && fast -> next != __null) {
             fast = fast -> next -> next;
             forward = slow -> next;
             slow -> next = prev;
@@ -37,8 +69,11 @@ public:
     }
 };
 
+*/
+
 /*
 // Find middle, reverse Last half and check!!
+
 class Solution {
 private:
     ListNode* reverse(ListNode* tempHead) {
