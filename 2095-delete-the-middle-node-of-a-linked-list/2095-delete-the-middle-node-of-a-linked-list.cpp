@@ -15,8 +15,7 @@ public:
         if(head -> next == __null) return head = __null;
         // ListNode* prev = __null;
         ListNode* slow = head;
-        ListNode* fast = head;
-        fast = fast -> next -> next;
+        ListNode* fast = head -> next -> next;
         
         while(fast != __null && fast -> next != __null) {
             // prev = slow;
