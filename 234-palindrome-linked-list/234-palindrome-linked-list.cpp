@@ -33,23 +33,11 @@ public:
             // slow = slow -> next;
             slow = forward; // same as above commented line!!
         }
-        if(fast != __null) slow = slow -> next;
-        ListNode* prevConnector = slow;
-        while(slow != __null) {
-            if(slow -> val != prev -> val) return false;
-            ListNode* tempStorer = prevConnector;
-            prevConnector = prev;
-            slow = slow -> next;
-            prev = prev -> next;
-            prevConnector -> next = tempStorer;
-            
-        }
-        
-        /* // Or
         
         ListNode* tail = __null; // __null or head or uninitialised
         if(fast != __null) tail = slow -> next;
         else tail = slow;
+        // cout << slow -> val << "\n";
         
         while(prev != __null) {
             if(tail -> val != prev -> val) return false;
@@ -58,10 +46,9 @@ public:
             tail = tail -> next;
             prev = prev -> next;
             slow -> next = temp;
-            cout << slow -> next -> val << "\n";
         }
-        */
-        // print(head);
+        
+        print(head);
         return true;
     }
 };
