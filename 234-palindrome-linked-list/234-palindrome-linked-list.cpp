@@ -61,7 +61,7 @@ public:
             cout << slow -> next -> val << "\n";
         }
         */
-        print(head);
+        // print(head);
         return true;
     }
 };
