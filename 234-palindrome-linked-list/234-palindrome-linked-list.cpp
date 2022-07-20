@@ -13,6 +13,7 @@ public:
     bool isPalindrome(ListNode* head) {
         // Find middle while reversing the first half check!!
         // https://leetcode.com/problems/palindrome-linked-list/discuss/1137696/Short-and-Easy-w-Explanation-or-T-%3A-O(N)-S-%3A-O(1)-Solution-using-Fast-and-Slow
+        if(head == __null) return true;
         ListNode* slow = head; // slow is basically curr!!
         ListNode* fast = head;
         ListNode* prev = __null;
