@@ -9,6 +9,35 @@
  * };
  */
 class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        // Find middle while reversing the first half check!!
+        ListNode* slow = head; // slow is basically curr!!
+        ListNode* fast = head;
+        ListNode* prev = __null;
+        ListNode* forward = head;
+        
+        while(fast != __null && fast -> next != __null) {
+            fast = fast -> next -> next;
+            forward = slow -> next;
+            slow -> next = prev;
+            prev = slow;
+            // slow = slow -> next;
+            slow = forward; // same as above commented line!!
+        }
+        if(fast != __null) slow = slow -> next;
+        
+        while(slow != __null) {
+            if(slow -> val != prev -> val) return false;
+            slow = slow -> next, prev = prev -> next;
+        }
+        return true;
+    }
+};
+
+/*
+// Find middle, reverse Last half and check!!
+class Solution {
 private:
     ListNode* reverse(ListNode* tempHead) {
         ListNode* prev = __null;
@@ -25,6 +54,7 @@ private:
     }
 public:
     bool isPalindrome(ListNode* head) {
+        // Find middle, reverse Last half and check!!
         ListNode* slow = head;
         ListNode* fast = head;
         
@@ -50,3 +80,4 @@ public:
         return true;
     }
 };
+*/
