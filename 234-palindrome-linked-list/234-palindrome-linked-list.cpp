@@ -41,6 +41,7 @@ public:
         
         while(prev != __null) {
             if(tail -> val != prev -> val) return false;
+            // See Images in Notes to Understand this!!!!!!!!!
             ListNode* temp = slow;
             slow = prev;
             tail = tail -> next;
