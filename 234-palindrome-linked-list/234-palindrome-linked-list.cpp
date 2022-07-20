@@ -9,10 +9,16 @@
  * };
  */
 class Solution {
+private:
+    void print(ListNode* &head) {
+        ListNode* temp = head;
+        while (temp != __null) cout << temp -> val << " -> ", temp = temp -> next;
+        cout << "null" << "\n";
+    }
 public:
     bool isPalindrome(ListNode* head) {
-        // Find middle while reversing the first half check!!
-        // https://leetcode.com/problems/palindrome-linked-list/discuss/1137696/Short-and-Easy-w-Explanation-or-T-%3A-O(N)-S-%3A-O(1)-Solution-using-Fast-and-Slow
+        // Find middle while reversing the first half and check!! --> order of oroginal LL is restored after disturbing it. For more reference, go to the attached link
+        // https://leetcode.com/problems/palindrome-linked-list/discuss/64500/11-lines-12-with-restore-O(n)-time-O(1)-space/117753
         if(head == __null) return true;
         ListNode* slow = head; // slow is basically curr!!
         ListNode* fast = head;
@@ -28,17 +34,53 @@ public:
             slow = forward; // same as above commented line!!
         }
         if(fast != __null) slow = slow -> next;
-        
+        ListNode* prevConnector = slow;
         while(slow != __null) {
             if(slow -> val != prev -> val) return false;
-            slow = slow -> next, prev = prev -> next;
+            ListNode* tempStorer = prevConnector;
+            prevConnector = prev;
+            slow = slow -> next;
+            prev = prev -> next;
+            prevConnector -> next = tempStorer;
+            
         }
+        
+        /* // Or
+        
+        ListNode* tail = __null; // __null or head or uninitialised
+        if(fast != __null) tail = slow -> next;
+        else tail = slow;
+        
+        while(prev != __null) {
+            if(tail -> val != prev -> val) return false;
+            ListNode* temp = slow;
+            slow = prev;
+            tail = tail -> next;
+            prev = prev -> next;
+            slow -> next = temp;
+            cout << slow -> next -> val << "\n";
+        }
+        */
+        print(head);
         return true;
     }
 };
 
+
 /*
-// Find middle while reversing the first half check!!
+ListNode* tail = __null; // __null or head or uninitialised
+        if(fast != __null) tail = slow -> next;
+        else tail = slow;
+        
+        while(prev != __null) {
+            if(tail -> val != prev -> val) return false;
+            ListNode* temp = slow, slow = prev,
+            tail = tail -> next, prev = prev -> next, slow -> next = temp;
+        }
+*/
+
+/*
+// Find middle while reversing the first half and check!! --> order of oroginal LL is disturbed. For more reference, go to the attached link's dry run diagram and see as to why and how.
 
 class Solution {
 public:
@@ -72,7 +114,7 @@ public:
 */
 
 /*
-// Find middle, reverse Last half and check!!
+// Find middle, reverse Last half and check!! --> order of the original LL is disturbed!!
 
 class Solution {
 private:
