@@ -48,7 +48,7 @@ public:
             slow -> next = temp;
         }
         
-        print(head);
+        // print(head);
         return true;
     }
 };
