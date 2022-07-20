@@ -33,6 +33,7 @@ public:
             // slow = slow -> next;
             slow = forward; // same as above commented line!!
         }
+        
         ListNode* tail = __null; // __null or head or uninitialised
         if(fast != __null) tail = slow -> next;
         else tail = slow;
