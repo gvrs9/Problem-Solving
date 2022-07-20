@@ -10,6 +10,49 @@
  */
 class Solution {
 private:
+    ListNode* reverse(ListNode* head) {
+        if(head == __null || head -> next == __null) return head;
+        
+        ListNode* chotaHead = reverse(head -> next);
+        head -> next -> next = head;
+        head -> next = __null;
+        return chotaHead;
+    }
+public:
+    ListNode* reverseList(ListNode* head) {
+        // Recursive Approach
+        return reverse(head);
+    }
+};
+
+/*
+// Iterative Approach
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        // Iterative Approach
+        
+        ListNode* prev = __null;
+        ListNode* curr = head;
+        ListNode* forward = __null;
+        
+        while(curr != __null) {
+            forward = curr -> next;
+            curr -> next = prev;
+            prev = curr;
+            curr = forward;
+        }
+        return prev;
+    }
+};
+*/
+
+/*
+
+// Recursive Approach1
+
+class Solution {
+private:
     void reverse(ListNode* &head, ListNode* curr, ListNode* prev) {
         if(curr == __null) {
             head = prev;
@@ -29,26 +72,6 @@ public:
         
         reverse(head, curr, prev);
         return head;
-    }
-};
-
-/*
-class Solution {
-public:
-    ListNode* reverseList(ListNode* head) {
-        // Iterative Approach
-        
-        ListNode* prev = __null;
-        ListNode* curr = head;
-        ListNode* forward = __null;
-        
-        while(curr != __null) {
-            forward = curr -> next;
-            curr -> next = prev;
-            prev = curr;
-            curr = forward;
-        }
-        return prev;
     }
 };
 */
