@@ -2,6 +2,9 @@ class Solution {
     public void setZeroes(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         boolean zeroRow = false, zeroCol = false;
+        /*
+            [[1, 1, 1, 1], [2, 0, 1, 1], [0, 2, 1, 1]] --> consider this example to understand why did you i take the two boolean variables!!
+        */
         for(int i = 0; i < m; i++) { // marking phase!!
             for(int j = 0; j < n; j++) {
                 if(matrix[i][j] == 0) {
