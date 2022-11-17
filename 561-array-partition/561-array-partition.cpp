@@ -6,7 +6,7 @@ public:
         int maxi = 0;
         bool flag = true;
         for(int i = 0; i < 20001; i++) {
-            while(hsh[i]) {
+            while(hsh[i] > 0) {
                 if(flag) maxi += i - 10000;
                 flag = !flag;
                 hsh[i]--;
