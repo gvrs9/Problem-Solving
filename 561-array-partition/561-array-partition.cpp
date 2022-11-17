@@ -1,6 +1,7 @@
 class Solution {
 public:
     int arrayPairSum(vector<int>& nums) {
+        // Counting Sort
         int hsh[20001] = {0};
         for(int i = 0; i < (int)nums.size(); i++) hsh[nums[i] + 10000]++;
         int maxi = 0;
