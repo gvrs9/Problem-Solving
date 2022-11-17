@@ -2,7 +2,7 @@ class Solution {
 public:
     int arrayPairSum(vector<int>& nums) {
         int hsh[20001] = {0};
-        for(int x : nums) hsh[x + 10000]++;
+        for(int i = 0; i < (int)nums.size(); i++) hsh[nums[i] + 10000]++;
         int maxiSum = 0;
         bool flag = true;
         for(int i = 0; i < 20001; i++) {
