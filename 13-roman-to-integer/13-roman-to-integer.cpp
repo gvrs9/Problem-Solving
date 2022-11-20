@@ -6,7 +6,7 @@ public:
         if(s.size() == 1) return mapi[s[0]];
         int ans = mapi[s[0]], i = 1;
         while(i < (int)s.size()) {
-            if((s[i - 1] == 'I' && (s[i] == 'V' || s[i] == 'X')) || (s[i - 1] == 'X' && (s[i] == 'L' || s[i] == 'C')) || (s[i - 1] == 'C' && (s[i] == 'D' || s[i] == 'M'))) {
+            if(mapi[s[i]] > mapi[s[i - 1]]) {
                 // cout << s[i - 1] << " " << s[i] << "\n";
                 // cout << "hey\n";
                 ans -= mapi[s[i - 1]];
