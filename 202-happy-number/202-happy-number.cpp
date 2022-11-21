@@ -11,7 +11,7 @@ private:
     }
 public:
     bool isHappy(int n) {
-        set<int> s;
+        unordered_set<int> s;
         while(n != 1 && s.find(n) == s.end()) {
             s.insert(n);
             n = squareDigitSum(n);
