@@ -15,8 +15,7 @@ public:
         while(n != 1 && s.find(n) == s.end()) {
             s.insert(n);
             n = squareDigitSum(n);
-            if(s.find(n) != s.end()) return false;
         }
-        return true;
+        return n == 1;
     }
 };
