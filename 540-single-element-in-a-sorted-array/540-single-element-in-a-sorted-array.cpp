@@ -47,13 +47,7 @@ public:
         while(lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             // cout << "middi --> " << mid << "\n";
-            if(mid - 1 > 0 && mid + 1 < n && nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1]) {
-                return nums[mid];
-            }else if(mid - 1 < 0 && nums[mid + 1] != nums[mid]) {
-                return nums[mid];
-            }else if(mid + 1 > n && nums[mid - 1] != nums[mid]) {
-                return nums[mid];
-            }else if(mid & 1) { // if mid is odd
+            if(mid & 1) { // if mid is odd
                 if(mid - 1 >= 0 && nums[mid - 1] == nums[mid]) {
                     lo = mid + 1;
                 }else if(mid + 1 < n && nums[mid + 1] == nums[mid]) {
@@ -71,6 +65,8 @@ public:
                 	return nums[mid];
                 }
                 // cout << lo << " " << hi << "\n";
+            }else {
+                return nums[mid];
             }
         }
         return nums[lo];
