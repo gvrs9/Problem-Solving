@@ -20,8 +20,11 @@ public:
         int n = nums.size();
         if(n == 1) return nums[0];
         int lo(0), hi(n - 1);
-        /*while(lo <= hi) {
+        
+        /*
+            while(lo <= hi) {
             int mid = lo + (hi - lo) / 2;
+            // cout << "middi --> " << mid << "\n";
             if(mid - 1 > 0 && mid + 1 < n && nums[mid] != nums[mid - 1] && nums[mid] != nums[mid + 1]) {
                 return nums[mid];
             }else if(mid - 1 < 0 && nums[mid + 1] != nums[mid]) {
@@ -29,20 +32,27 @@ public:
             }else if(mid + 1 > n && nums[mid - 1] != nums[mid]) {
                 return nums[mid];
             }else if(mid & 1) { // if mid is odd
-                if(mid - 1 > 0 && nums[mid - 1] == nums[mid]) {
+                if(mid - 1 >= 0 && nums[mid - 1] == nums[mid]) {
                     lo = mid + 1;
                 }else if(mid + 1 < n && nums[mid + 1] == nums[mid]) {
                     hi = mid - 1;
+                }else {
+                	return nums[mid];
                 }
+                // cout << lo << " " << hi << "\n";
             }else if((mid & 1) == 0) { // if mid is even
-                if(mid - 1 > 0 && nums[mid - 1] == nums[mid]) {
+                if(mid - 1 >= 0 && nums[mid - 1] == nums[mid]) {
                     hi = mid - 1;
                 }else if(mid + 1 < n && nums[mid + 1] == nums[mid]) {
                     lo = mid + 1;
+                }else {
+                	return nums[mid];
                 }
+                // cout << lo << " " << hi << "\n";
             }
         }
-        return nums[lo];*/
+        return nums[lo];
+        */
         
         while(lo <= hi) {
             int mid = lo + (hi - lo) / 2;
