@@ -2,11 +2,11 @@ class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
         // [1,1,2,2,3,3,4,5,5,6,6,7,7,8,8]
-        // if mid is odd and arr[mid - 1] == arr[mid], then do not visit that [lo, mid - 1] space. That means reduce that space.
-        // if mid is odd and arr[mid + 1] == arr[mid], then do not visit that [mid + 1, hi] space. That means reduce that space.
-        // If mid is even and arr[mid - 1] == arr[mid], then visit that [lo, mid - 1] space.
-        // If mid is even and arr[mid + 1] == arr[mid], then visit that [mid + 1, hi] space.
-        // If arr[mid] != arr[mid -1] && arr[mid] != arr[mid + 1] then return that arr[mid].
+        // if mid is odd and nums[mid - 1] == nums[mid], then do not visit that [lo, mid - 1] space. That means reduce that space.
+        // if mid is odd and nums[mid + 1] == nums[mid], then do not visit that [mid + 1, hi] space. That means reduce that space.
+        // If mid is even and nums[mid - 1] == nums[mid], then visit that [lo, mid - 1] space.
+        // If mid is even and nums[mid + 1] == nums[mid], then visit that [mid + 1, hi] space.
+        // If nums[mid] != nums[mid -1] && nums[mid] != nums[mid + 1] then return that nums[mid].
         // [1, 2, 2, 3, 3, 4, 4, 5, 5]
         
         // [1, 1, 2, 2, 3, 3, 4, 4, 5]
