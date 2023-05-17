@@ -20,6 +20,12 @@ public:
 	    return ansIndex;*/
 	    
 	    //O(N + M)
+	    // Abe chodu, question dhyan se padle!! Yaha Two Pointer Concept use kar sakte hai!!
+	    // har ek row sorted hai and most important is that, column ka size, har ek row mein fixed(same) hai. So, we can just keep track of row and columns.
+	    // i maintains the row index from first and j the column index from last(as we know that every column is sorted).
+	    // decrement j and keep updating the ansIndex(this will store the row that will have max number of 1's) until you hit 0.
+	    // if 0 is encountered, then increment the i which keeps track of the row number.
+	    // consider the example and dry run the test cases. Samajh aa jayega bsdk!!
 	    int i = 0, j = m - 1;
 	    int ansIndex = -1;
 	    while(i < n && j >= 0) {
