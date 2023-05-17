@@ -8,13 +8,23 @@ class Solution {
 public:
 	int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
 	    // code here
-	    int maxiCnt = 0, ansIndex = -1;
+	    // O(N*log(M))
+	    /*int maxiCnt = 0, ansIndex = -1;
 	    for(int i = 0; i < n; i++) {
 	        int currOneCnt = (upper_bound(arr[i].begin(), arr[i].end(), 1) - lower_bound(arr[i].begin(), arr[i].end(), 1));
 	        if(maxiCnt < currOneCnt) {
 	            maxiCnt = currOneCnt;
 	            ansIndex = i;
 	        }
+	    }
+	    return ansIndex;*/
+	    
+	    //O(N + M)
+	    int i = 0, j = m - 1;
+	    int ansIndex = -1;
+	    while(i < n && j >= 0) {
+	        if(arr[i][j]) j--, ansIndex = i;
+	        else i++;
 	    }
 	    return ansIndex;
 	}
