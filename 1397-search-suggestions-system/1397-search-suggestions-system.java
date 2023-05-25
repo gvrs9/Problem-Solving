@@ -8,7 +8,6 @@ class Solution {
         for(int i = 0; i < searchWord.length(); i++) {
             List<String> list = new ArrayList<>();
             tempString += searchWord.charAt(i);
-            System.out.println("hi");
             int tempStringLength = tempString.length();
             int maxProductsStringCnt = 0;
 
