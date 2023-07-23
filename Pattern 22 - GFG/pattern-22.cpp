@@ -8,10 +8,6 @@ class Solution {
   public:
     void printSquare(int n) {
         // code here
-        if(n == 1) {
-            cout << "1" << "\n";
-            return;
-        }
         int i = n;
         while(i > 1) {
             int oddLoopingCount = 2 * i - 1;
