@@ -5,8 +5,7 @@ public:
         for(int i = s.size() - 1; i >= 0; i--) {
             if(s[i] != ' ') {
                 count++;
-                continue;
-            }else if(s[i] == ' ' && count) return count;
+            }else if(count) return count;
         }
         return count;
     }
