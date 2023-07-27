@@ -1,7 +1,7 @@
 class Solution {
     public int maxNumberOfBalloons(String text) {
         int[] hash = new int[26];
-        Arrays.fill(hash, 0);
+        // Arrays.fill(hash, 0);
         for(int i = 0; i < text.length(); i++) hash[text.charAt(i) - 'a']++;
         int banMin = Math.min(Math.min(hash['b' - 'a'], hash['a' - 'a']), hash['n' - 'a']);
         if(banMin < 1) return 0;
