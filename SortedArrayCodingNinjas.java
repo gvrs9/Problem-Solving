@@ -72,6 +72,70 @@ Time Limit: 1 sec
 import java.util.*;
 public class Solution {
     public static List< Integer > sortedArray(int []a, int []b) {
+        /*
+            Time Complexity: O((N + M))
+            Space Complexity: O(N + M)
+        
+            N and M are the sizes of array 'A' and 'B' respectively.
+        */
+        int n = a.length, m = b.length;
+        // Dynamic Array to store the union of 'a' and 'b'
+        List< Integer > unionArray = new ArrayList<>();
+
+        int i = 0, j = 0;
+        // Iterating over both arrays
+        while (i < n && j < m) {
+
+            // Current element in a is smaller or
+            // equal to the current element in b
+            if (a[i] <= b[j]) {
+
+                // Checking whether same element
+                // exists in the 'unionArray' or not.
+                if (unionArray.size() == 0 ||
+                        unionArray.get(unionArray.size() - 1) != a[i]) {
+                    unionArray.add(a[i]);
+                }
+
+                // Incrementing i
+                ++i;
+            } else {
+                // A[i] > B[j]
+                if (unionArray.size() == 0 ||
+                        unionArray.get(unionArray.size() - 1) != b[j]) {
+                    unionArray.add(b[j]);
+                }
+
+                // Incrementing j
+                ++j;
+            }
+        }
+
+        // Traversing over 'a' to insert
+        // elements which are left
+        while (i < n) {
+            if (unionArray.get(unionArray.size() - 1) != a[i]) {
+                unionArray.add(a[i]);
+            }
+
+            // Incrementing i
+            ++i;
+        }
+
+        // Traverse over 'b' to insert
+        // elements which are left
+        while (j < m) {
+            if (unionArray.get(unionArray.size() - 1) != b[j]) {
+                unionArray.add(b[j]);
+            }
+
+            // Incrementing j
+            ++j;
+        }
+
+        return unionArray;
+        /* 
+        // Two Pointers
         // Write your code here
         int n = a.length, m = b.length;
         int i = 0, j = 0;
@@ -100,5 +164,6 @@ public class Solution {
         }
 
         return l;
+        */
     }
 }
