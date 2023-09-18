@@ -8,13 +8,9 @@ public:
             int n = emails[i].size();
             int j = 0;
             
-            while(j < n) {
-                if(emails[i][j] == '+' || emails[i][j] == '@') break;
-                if(emails[i][j] == '.') {
-                    j++;
-                    continue;
-                }
-                str += emails[i][j++];
+            while(emails[i][j] != '+' && emails[i][j] != '@') {
+                if(emails[i][j] != '.') str += emails[i][j];
+                j++;
             }
             
             while(emails[i][j] != '@') j++;
