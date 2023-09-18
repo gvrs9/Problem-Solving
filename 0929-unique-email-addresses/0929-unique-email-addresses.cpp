@@ -8,8 +8,8 @@ public:
             int n = emails[i].size();
             int j = 0;
             
-            while(j < n) {
-                if(emails[i][j] == '+' || emails[i][j] == '@') break;
+            while(j < n && emails[i][j] != '+' && emails[i][j] != '@') {
+                // if(emails[i][j] == '+' || emails[i][j] == '@') break;
                 if(emails[i][j] == '.') {
                     j++;
                     continue;
@@ -17,12 +17,13 @@ public:
                 str += emails[i][j++];
             }
             
-            while(emails[i][j] != '@') j++;
+            while(j < n && emails[i][j] != '@') j++;
             
             while(j < n) str += emails[i][j++];
             
             st.insert(str);
         }
+        for(auto x : st) cout << x << "\n";
         return st.size();
     }
 };
