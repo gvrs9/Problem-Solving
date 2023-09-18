@@ -23,7 +23,6 @@ public:
             
             st.insert(str);
         }
-        for(auto it : st) cout << it << "\n";
         return st.size();
     }
 };
