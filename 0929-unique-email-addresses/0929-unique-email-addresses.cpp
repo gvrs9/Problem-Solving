@@ -41,7 +41,6 @@ public:
             int j = 0;
             
             while(emails[i][j] != '+' && emails[i][j] != '@') {
-                // if(emails[i][j] == '+' || emails[i][j] == '@') break;
                 if(emails[i][j] == '.') {
                     j++;
                     continue;
