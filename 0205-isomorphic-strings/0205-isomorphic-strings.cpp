@@ -24,7 +24,8 @@ public:
             char sCurrChar = s[i], tCurrChar = t[i];
             
             if(hsh_S_To_T[sCurrChar]) {
-                if(!T_hsh[tCurrChar] || hsh_S_To_T[sCurrChar] != tCurrChar) return false;
+                // if(!T_hsh[tCurrChar] || hsh_S_To_T[sCurrChar] != tCurrChar) return false;
+                if(hsh_S_To_T[sCurrChar] != tCurrChar) return false; // think about it. Why did I excluded the T_hsh[tCurrChar] check.
             }else {
                 // cout << sCurrChar << " " << tCurrChar << "\n";
                 if(T_hsh[tCurrChar]) return false;
