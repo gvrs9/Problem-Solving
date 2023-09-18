@@ -17,9 +17,9 @@ public:
                 str += emails[i][j++];
             }
             
-            if(emails[i][j] == '+') while(emails[i][j] != '@') j++;
+            while(emails[i][j] != '@') j++;
             
-            if(emails[i][j] == '@') while(j < n) str += emails[i][j++];
+            while(j < n) str += emails[i][j++];
             
             st.insert(str);
         }
