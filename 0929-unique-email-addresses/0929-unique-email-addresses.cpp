@@ -14,11 +14,10 @@ public:
                     j++;
                     continue;
                 }
-                str += emails[i][j];
-                j++;
+                str += emails[i][j++];
             }
             
-            if(emails[i][j] == '+') while(j < n && emails[i][j] != '@') j++;
+            if(emails[i][j] == '+') while(emails[i][j] != '@') j++;
             
             if(emails[i][j] == '@') while(j < n) str += emails[i][j++];
             
