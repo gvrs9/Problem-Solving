@@ -2,10 +2,10 @@ class Solution {
 public:
     int numUniqueEmails(vector<string>& emails) {
         unordered_set<string> st;
-        
-        for(int i = 0; i < (int)emails.size(); i++) {
+        int n = emails.size();
+        for(int i = 0; i < n; i++) {
             string str = "";
-            int n = emails[i].size();
+            int m = emails[i].size();
             int j = 0;
             
             while(emails[i][j] != '+' && emails[i][j] != '@') {
@@ -15,7 +15,7 @@ public:
             
             while(emails[i][j] != '@') j++;
             
-            while(j < n) str += emails[i][j++];
+            while(j < m) str += emails[i][j++];
             
             st.insert(str);
         }
