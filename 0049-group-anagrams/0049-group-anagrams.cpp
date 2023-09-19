@@ -12,7 +12,7 @@ public:
             */
             
             char chFreq[26];
-            for(char& ch : chFreq) ch = 'a';
+            for(char& ch : chFreq) ch = 0;
             for(char ch : str) chFreq[ch - 'a']++;
             string keyString = "";
             for(char ch : chFreq) keyString += ch;
