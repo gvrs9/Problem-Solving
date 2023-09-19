@@ -8,6 +8,7 @@ public:
             for(int ch : str) chFreq[ch - 'a']++;
             string keyString;
             for(int x : chFreq) keyString += (x + '0');
+            cout << keyString << "\n";
             umap[keyString].push_back(str);
         }
         
