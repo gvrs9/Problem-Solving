@@ -5,7 +5,7 @@ public:
         for(string str : strs) {
             string tempStr = str;
             int chFreq[26] = {0};
-            for(char ch : str) chFreq[ch - 'a']++;
+            for(int ch : str) chFreq[ch - 'a']++;
             string keyString;
             for(int x : chFreq) keyString += (x + '0');
             umap[keyString].push_back(str);
