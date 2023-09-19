@@ -11,8 +11,8 @@ public:
             for(int x : chFreq) keyString += (x + '0');
             */
             
-            char chFreq[26];
-            for(char& ch : chFreq) ch = 0;
+            char chFreq[26] = {0};
+            // for(char& ch : chFreq) ch = 0;
             for(char ch : str) chFreq[ch - 'a']++;
             string keyString = "";
             for(char ch : chFreq) keyString += ch;
