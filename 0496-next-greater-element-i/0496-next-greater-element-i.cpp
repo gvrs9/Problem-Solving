@@ -1,13 +1,23 @@
+// class Solution {
+// public:
+//     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        
+//     }
+// };
+
+
+
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        // Brute Force!! O(n*m) -> T.C && space complexity of O(n) where n and m nums1.size() and nums2.size()
         vector<int> ans(nums1.size(), -1);
         unordered_map<int, int> umap;
         
         for(int i = 0; i < (int)nums1.size(); i++) umap[nums1[i]] = i;
         for(int i = 0; i < (int)nums2.size(); i++) {
             if(umap.find(nums2[i]) == umap.end()) continue;
-            for(int j = i; j < (int)nums2.size(); j++) {
+            for(int j = i + 1; j < (int)nums2.size(); j++) {
                 if(nums2[i] < nums2[j]) {
                     ans[umap[nums2[i]]] = nums2[j];
                     break;
@@ -18,6 +28,8 @@ public:
         return ans;
     }
 };
+
+
 
 /*
 class Solution {
