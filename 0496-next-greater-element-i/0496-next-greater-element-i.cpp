@@ -6,7 +6,7 @@
 // };
 
 
-
+/*
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
@@ -28,10 +28,10 @@ public:
         return ans;
     }
 };
+*/
 
 
 
-/*
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
@@ -56,4 +56,3 @@ public:
         return ans;
     }
 };
-*/
