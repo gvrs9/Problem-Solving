@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-        vector<int> ans(nums1.size(), -1);
         unordered_map<int, int> umap;
         stack<int> stk;
         
@@ -13,7 +12,8 @@ public:
             stk.push(nums2[i]);
         }
         
-        for(int i = 0; i < (int)nums1.size(); i++) ans[i] = umap[nums1[i]];
+        vector<int> ans;
+        for(int x : nums1) ans.push_back(umap[x]);
         
         return ans;
     }
