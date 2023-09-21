@@ -1,16 +1,38 @@
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
-        /*
-        1. Monotonic Stack Concept is used to optimize!!
-        2. Must Read!! https://liuzhenglaichn.gitbook.io/algorithm/monotonic-stack
-        3. https://www.geeksforgeeks.org/introduction-to-monotonic-stack-data-structure-and-algorithm-tutorials/
-        4. https://www.youtube.com/watch?v=Dq_ObZwTY_Q&pp=ygUPbW9ub3RvbmljIHN0YWNr
-        5. https://www.youtube.com/watch?v=TunTV2-griM (Fraz)
-        6. https://www.youtube.com/watch?v=cGf_3SgXwWk&pp=ygUPbW9ub3RvbmljIHN0YWNr (Fraz Basic + Advanced)
-        7. https://www.youtube.com/watch?v=J7Ll0I-GSwA&pp=ygUTbW9ub3RvbmUgc3RhY2sgZnJheg%3D%3D (Basic + Advanced)
-        8. https://www.youtube.com/watch?v=68a1Dc_qVq4&pp=ygUTbW9ub3RvbmUgc3RhY2sgZnJheg%3D%3D (Neetcode's explanation to this problem)
-        */
+        vector<int> ans(nums1.size(), -1);
+        unordered_map<int, int> umap;
+        stack<int> stk;
+        
+        for(int i = nums2.size() - 1; i >=0; i--) { // First creating all the nges for all the elements in the nums2[] and storing them in a map.
+            int currElement = nums2[i];
+            while(!stk.empty() && currElement > stk.top()) stk.pop();
+            int res = stk.empty() ? -1 : stk.top();
+            umap[nums2[i]] = res;
+            stk.push(nums2[i]);
+        }
+        
+        for(int i = 0; i < (int)nums1.size(); i++) ans[i] = umap[nums1[i]];
+        
+        return ans;
+    }
+};
+
+/*
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        
+//         1. Monotonic Stack Concept is used to optimize!!
+//         2. Must Read!! https://liuzhenglaichn.gitbook.io/algorithm/monotonic-stack
+//         3. https://www.geeksforgeeks.org/introduction-to-monotonic-stack-data-structure-and-algorithm-tutorials/
+//         4. https://www.youtube.com/watch?v=Dq_ObZwTY_Q&pp=ygUPbW9ub3RvbmljIHN0YWNr
+//         5. https://www.youtube.com/watch?v=TunTV2-griM (Fraz)
+//         6. https://www.youtube.com/watch?v=cGf_3SgXwWk&pp=ygUPbW9ub3RvbmljIHN0YWNr (Fraz Basic + Advanced)
+//         7. https://www.youtube.com/watch?v=J7Ll0I-GSwA&pp=ygUTbW9ub3RvbmUgc3RhY2sgZnJheg%3D%3D (Basic + Advanced)
+//         8. https://www.youtube.com/watch?v=68a1Dc_qVq4&pp=ygUTbW9ub3RvbmUgc3RhY2sgZnJheg%3D%3D (Neetcode's explanation to this problem)
+        
         
         // Time Complexity is O(n + m) and Space Complexity is O(n).
         
@@ -41,6 +63,7 @@ public:
         return ans;
     }
 };
+*/
 
 
 /*
