@@ -4,7 +4,7 @@ public:
         unordered_map<int, int> umap;
         stack<int> stk;
         
-        // O(n + m) -> T.C and O(n) -> S.C
+        // O(n + m) -> T.C and O(n) -> S.C. Similar to the other stack solution!!
         // This is Monotonically decreasing stack problem.
         
         for(int i = nums2.size() - 1; i >=0; i--) { // First creating all the nges for all the elements in the nums2[] and storing them in a map.
