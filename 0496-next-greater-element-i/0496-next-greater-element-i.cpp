@@ -4,6 +4,8 @@ public:
         unordered_map<int, int> umap;
         stack<int> stk;
         
+        // O(n + m) -> T.C and O(n) -> S.C
+        
         for(int i = nums2.size() - 1; i >=0; i--) { // First creating all the nges for all the elements in the nums2[] and storing them in a map.
             int currElement = nums2[i];
             while(!stk.empty() && currElement > stk.top()) stk.pop();
