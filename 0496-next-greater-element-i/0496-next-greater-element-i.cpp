@@ -21,7 +21,7 @@ public:
         
         for(int i = 0; i < (int)nums1.size(); i++) umap[nums1[i]] = i;
         
-        stack<int> stk;
+        stack<int> stk; // Here we are using monotonically decreasing stack!!
         for(int i = 0; i < (int)nums2.size(); i++) {
             int currElement = nums2[i];
             // we want to know if this currElement is the nge for any previous values that could be on our stack;
