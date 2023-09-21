@@ -37,6 +37,7 @@ public:
             // check if currElement is in the hashmap so that, if its there then since we need to find nge for it(currElement) too now, we will then push that currElement in the stack.
             if(umap.find(currElement) != umap.end()) stk.push(currElement);
         }
+        
         return ans;
     }
 };
