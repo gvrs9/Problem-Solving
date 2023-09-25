@@ -31,6 +31,7 @@ public:
 };
 */
 
+/*
 class Solution {
 public:
     char findTheDifference(string s, string t) {
@@ -42,6 +43,22 @@ public:
         ch -= t[i];
         // cout << int(ch) << "\n";
         ch *= -1;
+        
+        return ch;
+    }
+};
+*/
+
+class Solution {
+public:
+    char findTheDifference(string s, string t) {
+        char ch = 0;
+        int i = 0;
+        
+        while(i < (int)s.size()) ch -= s[i], ch += t[i++];
+        
+        ch += t[i];
+        // cout << int(ch) << "\n";
         
         return ch;
     }
