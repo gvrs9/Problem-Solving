@@ -58,6 +58,7 @@ class Solution {
 public:
     char findTheDifference(string s, string t) {
         char ch = 0;
+        
         int i = 0;
         
         while(i < (int)s.size()) ch -= s[i], ch += t[i++];
