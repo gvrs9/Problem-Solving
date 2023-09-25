@@ -4,7 +4,8 @@ public:
         char ch = 0;
         
         // 0 ^ ch -> ch ^ 0 -> ch. ch ^ ch -> 0.
-        // ex: s = abc and t = bcax. Applying xor on s, a ^ b ^ c and similarly on t, b ^ c ^ a ^ x same as a ^ b ^ c ^ x. And xor both the strings s and t --> (a ^ b ^ c) ^ (a ^ b ^ c ^ x) --> (a ^ a ^ b ^ b ^ c ^ c ^ x) --> (0 ^ x) --> x.
+        
+        // Ex: s = abc and t = bcax. Applying xor on s, a ^ b ^ c and similarly on t, b ^ c ^ a ^ x same as a ^ b ^ c ^ x. And xor both the strings s and t --> (a ^ b ^ c) ^ (a ^ b ^ c ^ x) --> (a ^ a ^ b ^ b ^ c ^ c ^ x) --> (0 ^ x) --> x.
         
         for(char x : s) ch ^= x;
         
