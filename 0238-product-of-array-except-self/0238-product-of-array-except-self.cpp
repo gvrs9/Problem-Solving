@@ -1,3 +1,5 @@
+// https://youtu.be/eQ3eEOh0nSk?feature=shared (Deepti talesra --> explains the intuition in an excellent way especially on how to think of prefix and suffix arrays for storing and calculating for the brute -> better. And better to optimized (space efficient)).
+// https://youtu.be/bNvIQI2wAjk?feature=shared (Obviously, the og --> explains the problem in depth)
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
@@ -6,6 +8,7 @@ public:
         
         vector<int> ans(nums.size());
         ans[0] = 1;
+        
         // calculating the prefix product
         for(int i = 1; i < (int)nums.size(); i++) ans[i] = ans[i - 1] * nums[i - 1];
         
@@ -20,6 +23,8 @@ public:
             ans[i] = prefix * suffix; // store the product in the same position.
             suffix *= nums[i]; // update the suffix.
         }
+        
+        // Note: We can also do this problem in other way around i.e., we can first calculate the suffix product and then calculate the prefix product (by taking prefix variable -> prefix = 1) and simultaneously the prefix * suffix product.
         
         return ans;
     }
