@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         // prefix sum using prefix array and suffix(or postfix) array
+        // O(n) -> T.C & S.C
         
         vector<int> ans(nums.size()), pref(nums.size() + 1), suff(nums.size() + 1);
         
