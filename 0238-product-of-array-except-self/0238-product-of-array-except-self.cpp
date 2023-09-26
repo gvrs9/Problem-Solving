@@ -26,3 +26,32 @@ public:
         return ans;
     }
 };
+
+/*
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+    
+        // Same as above prefix and suffix array technique.
+        // O(n) -> T.C & S.C
+        
+        vector<int> pref(nums.size(), 0);
+        
+        pref[0] = 1;
+        
+        for(int i = 1; i < (int)nums.size(); i++) pref[i] = pref[i - 1] * nums[i - 1];
+                
+        vector<int> suff(nums.size(), 0);
+        
+        suff[nums.size() - 1] = 1;
+        
+        for(int i = (int)nums.size() - 2; i>= 0; i--) suff[i] = suff[i + 1] * nums[i + 1];
+        
+        vector<int> ans(nums.size(), 0);
+        
+        for(int i = 0; i < (int)nums.size(); i++) ans[i] = pref[i] * suff[i];
+        
+        return ans;
+    }
+};
+*/
