@@ -8,6 +8,7 @@ public:
         ans[0] = 1;
         // calculating the prefix product
         for(int i = 1; i < (int)nums.size(); i++) ans[i] = ans[i - 1] * nums[i - 1];
+        
         // So for [1,2,3,4], the ans will now look like [1,1,2,6]. We don't need to store for the 4th ele as we don't require it and for it, the suffix product is 1.
         
         // we now calculate the suffix product and simultaneously calculate the prefix * suffix product. 
