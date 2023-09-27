@@ -1,4 +1,4 @@
 *.exe
-.gitignore/
 input.txt
+.gitignore
 output.txt
