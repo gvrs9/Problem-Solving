@@ -4,9 +4,7 @@ public:
         int left = 0, right = 0;
         
         while(right < (int)nums.size()) {
-            if(nums[right] % 2 == 0 && nums[left] % 2) swap(nums[right], nums[left++]);
-            else if(nums[left] % 2 == 0 && nums[right] % 2) left++;
-            else if(nums[left] % 2 == 0 && nums[right] % 2 == 0) left++;
+            if(nums[right] % 2 == 0) swap(nums[left++], nums[right]);
             right++;
         }
         
