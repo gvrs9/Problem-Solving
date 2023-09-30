@@ -30,7 +30,7 @@ public:
             // if((nums[i] > prev && nums[i] > nums[i + 1]) || (nums[i] < prev && nums[i] < nums[i + 1])) count++, prev = nums[i];
             if((nums[i] > prev && nums[i] > nums[i + 1]) || (nums[i] < prev && nums[i] < nums[i + 1])) count++;
             if(nums[i] != nums[i + 1]) {
-                cout << nums[i] << "\n";
+                // cout << nums[i] << "\n";
                 prev = nums[i]; // We don't need this condition here. We can simply update the prev in the 1st condition as we only update prev when we are not looking at duplicates.
             }
         }
