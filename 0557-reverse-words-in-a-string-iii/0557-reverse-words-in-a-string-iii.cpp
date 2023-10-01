@@ -7,11 +7,9 @@ public:
         
         for(int i = 0; i <= n; i++) {
             if(s[i] == ' ' || i == n) {
-                int mid = (wordStartIndex + (i)) / 2; // 
-                // cout << wordStartIndex << " " << (i - 1) << " " << mid << "\n";
-                for(int j = wordStartIndex; j < (wordStartIndex + (i)) / 2; j++) 
+                int mid = (wordStartIndex + (i)) / 2;
+                for(int j = wordStartIndex; j < mid; j++) 
                     swap(s[j], s[(i - j - 1) + wordStartIndex]);
-                // cout << s << "\n";
                 wordStartIndex = i + 1;
             }
         }
