@@ -1,8 +1,7 @@
 class Solution {
 public:
     bool arrayStringsAreEqual(vector<string>& word1, vector<string>& word2) {
-        // int n1 = word1.size() - 1, n2 = word2.size() - 1;
-        // int maxLength = (n1 > n2) ? n1 : n2, i = 0;
+        // O(N*k) -> time && O(N*K) -> Space. N is the number of strings in the list and KK is the maximum length of a string in it.
         string s1 = "", s2 = "";
         
         for(string & x : word1) s1 += x;
