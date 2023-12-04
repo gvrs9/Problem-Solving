@@ -1,14 +1,16 @@
 class Solution {
 public:
     string largestOddNumber(string num) {
-        string maxOddNumber = "";
-        string temp = "";
+        int n = num.size() - 1;
         
-        for(int i = 0; i < (int)num.size(); i++) {
-            temp.push_back(num[i]);
-            if(((temp.back() - '0') & 1)) maxOddNumber = temp;
+        // if(num[n] & 1) return num;
+        // num.pop_back();
+        
+        while(n >= 0) {
+            if(num[n] & 1) return num;
+            num.pop_back(), n--;
         }
         
-        return maxOddNumber;
+        return num;
     }
 };
