@@ -6,7 +6,7 @@ public:
 
         for(int i = 1; i < (int)num.size() - 1; i++) {
             if((num[i - 1] == num[i] && num[i] == num[i + 1]) && ((num[i] - '0') > maxi)) {
-                maxi = max(maxi, num[i] - '0');
+                maxi = num[i] - '0';
             }
         }
 
