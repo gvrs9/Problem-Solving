@@ -15,13 +15,13 @@ private:
         if(root == NULL) return;
 
         ans += to_string(root -> val);
-        if(root -> right && !root -> left) ans += "()";
+        if(!root -> right && !root -> left) return;
         
-        if(root -> left) {
+        // if(root -> left) {
             ans += "(";
             treeToString(ans, root -> left);
             ans += ")";
-        }
+        // }
         
         if(root -> right) {
             ans += "(";
