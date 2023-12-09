@@ -11,7 +11,7 @@
  */
 class Solution {
 private:
-    void treeToString(string& ans, TreeNode* root) {
+    void treeToString(TreeNode* root) {
         if(root == NULL) return;
 
         ans += to_string(root -> val);
@@ -19,20 +19,20 @@ private:
         
         // if(root -> left) {
             ans += "(";
-            treeToString(ans, root -> left);
+            treeToString(root -> left);
             ans += ")";
         // }
         
         if(root -> right) {
             ans += "(";
-            treeToString(ans, root -> right);
+            treeToString(root -> right);
             ans += ")";
         }
     }
 public:
+    string ans = "";
     string tree2str(TreeNode* root) {
-        string ans = "";
-        treeToString(ans, root);
+        treeToString(root);
         return ans;
     }
 };
