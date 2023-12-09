@@ -15,11 +15,6 @@ private:
     string path = "";
     void binaryTreePathString(TreeNode* root) {
         
-        if(!root) {
-            // binaryTreePathsInString.push_back(path);
-            return;
-        }
-
         path += to_string(root -> val);
 
         if(!root -> left && !root -> right) {
