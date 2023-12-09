@@ -17,11 +17,9 @@ private:
         ans += to_string(root -> val);
         if(!root -> right && !root -> left) return;
         
-        // if(root -> left) {
-            ans += "(";
-            treeToString(root -> left);
-            ans += ")";
-        // }
+        ans += "(";
+        treeToString(root -> left);
+        ans += ")";
         
         if(root -> right) {
             ans += "(";
@@ -36,3 +34,33 @@ public:
         return ans;
     }
 };
+
+/*
+class Solution {
+private:
+    void treeToString(string& ans, TreeNode* root) {
+        if(root == NULL) return;
+
+        ans += to_string(root -> val);
+        if(root -> right && !root -> left) ans += "()";
+        
+        if(root -> left) {
+            ans += "(";
+            treeToString(ans, root -> left);
+            ans += ")";
+        }
+        
+        if(root -> right) {
+            ans += "(";
+            treeToString(ans, root -> right);
+            ans += ")";
+        }
+    }
+public:
+    string tree2str(TreeNode* root) {
+        string ans = "";
+        treeToString(ans, root);
+        return ans;
+    }
+};
+*/
