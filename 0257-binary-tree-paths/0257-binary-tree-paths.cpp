@@ -25,7 +25,6 @@ private:
         if(root -> left) {
             path += "->";
             binaryTreePathString(root -> left);
-            // cout << path << "\n";
             while(path.back() != '>') path.pop_back();
             path.pop_back();path.pop_back();
         }
@@ -33,7 +32,6 @@ private:
         if(root -> right) {
             path += "->";
             binaryTreePathString(root -> right);
-            // cout << path << "\n";
             while(path.back() != '>') path.pop_back();
             path.pop_back();path.pop_back();
         }
