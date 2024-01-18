@@ -36,7 +36,7 @@ class Solution{
         // Optimised Approach -> Prefix Sum. Note: This works if arr[i] have 0's.
         
         // map<int, int> mp;
-        unordered_map<int, int> mp; //! Note: If using unordered_map, in the avg case, the T.C of this overall solution will be, O(N * 1) -> O(N). But in worst case, due to internal collisions in the unordered_map, we will have the overall T.C -> O(N * N) -> O(N^2). But if we use just map, the worst case T.C -> of this solution will be O(N*logN).
+        unordered_map<int, int> mp; //! Note: If using unordered_map, in the avg case, the T.C of this overall solution will be, O(N * 1) -> O(N). But in worst case, due to the constraints that might cause collisions in the unordered_map, we will have the overall T.C -> O(N * N) -> O(N^2). But if we use just map, the worst case T.C -> of this solution will be O(N*logN).
         int longestSubarrayLength = 0, prefixSum = 0;
         
         for(int i = 0; i < n; i++) {
