@@ -3,7 +3,7 @@
 using namespace std;
 
 /* *
-//! Some useful information regarding pointers!
+! Some useful information regarding pointers!
 void func(int* ptr);
 
 int array[5];

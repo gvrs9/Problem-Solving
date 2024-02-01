@@ -8,3 +8,5 @@ error.txt
 errorf.in
 *.bin
 .cph
+# *.*
+# !Dockerfile
