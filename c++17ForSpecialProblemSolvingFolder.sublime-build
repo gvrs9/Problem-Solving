@@ -1,3 +1,5 @@
+// Refer this link if in doubt: https://chat.openai.com/share/54305096-53d9-48de-9cd7-99828ae93cb4
+
 /*{
 	"cmd": [
 		"g++ -std=c++17 $file_path/${file_name} -o ${file_path}/${file_base_name} && timeout 4s ${file_path}/${file_base_name} < /home/gvrs9/Downloads/Problem-Solving/inputf.in > /home/gvrs9/Downloads/Problem-Solving/outputf.in"
@@ -6,6 +8,8 @@
 	"shell": true,
 	"working_dir": "${file_path}"
 }*/
+
+// For Linux based Distros
 
 {
 	"cmd": [
@@ -16,3 +20,27 @@
 	"working_dir": "${file_path}"
 }
 
+// For Windows. Has Seperate steps for building and running
+
+/*{
+	"shell_cmd": "g++ -std=c++17 \"$file\" -o \"${file_path}\\${file_base_name}.exe\"",
+	"selector": "source.cpp",
+	"working_dir": "${file_path}",
+
+	"variants":
+	[
+		{
+			"name": "Run",
+			"shell_cmd": "\"${file_path}\\${file_base_name}.exe\" < \"%CD%\\..\\inputf.in\" > \"%CD%\\..\\outputf.in\""
+		}
+	]
+}*/
+
+// For Windows. Builds it and runs it instantly.
+
+/*{
+	"shell_cmd": "g++ -std=c++17 \"$file\" -o \"${file_path}\\${file_base_name}.exe\" && \"${file_path}\\${file_base_name}.exe\" < \"%CD%\\..\\inputf.in\" > \"%CD%\\..\\outputf.in\"",
+	"selector": "source.cpp",
+	"working_dir": "${file_path}"
+}
+*/
