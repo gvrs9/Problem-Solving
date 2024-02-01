@@ -2,3 +2,7 @@
 input.txt
 .gitignore
 output.txt
+inputf.in
+outputf.in
+error.txt
+errorf.in
