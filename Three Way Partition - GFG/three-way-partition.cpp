@@ -3,7 +3,7 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-class Solution{   
+class Solution {   
 public:
     //Function to partition the array around the range such 
     //that array is divided into three parts.
@@ -25,3 +25,18 @@ public:
         // cout << "lo --> " << lo << " i --> " << i << " hi --> " << hi << "\n";
     }
 };
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(int& x : arr) cin >> x;
+    int a, b;
+    cin >> a >> b;
+
+    Solution sol;
+    sol.threeWayPartition(arr, 2, 9);
+
+    for(int& x : arr) cout << x << " ";
+    cout << "\n";
+}

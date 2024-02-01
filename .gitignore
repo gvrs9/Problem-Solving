@@ -6,3 +6,5 @@ inputf.in
 outputf.in
 error.txt
 errorf.in
+*.bin
+.cph
