@@ -1,6 +1,6 @@
 class Solution {
 private:
-    unordered_map<char, int> romanCharsMap = {
+    map<char, int> romanCharsMap = {
         {'I', 1},
         {'V', 5},
         {'X', 10},
