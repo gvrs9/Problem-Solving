@@ -10,3 +10,7 @@ errorf.in
 .cph
 # *.*
 # !Dockerfile
+/cmake-build-debug/
+/build/
+/.cache/
+/.idea/
