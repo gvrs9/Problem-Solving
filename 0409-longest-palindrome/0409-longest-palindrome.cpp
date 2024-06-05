@@ -24,6 +24,8 @@ public:
         return longestPalindromeLength;
         */
         
+        // Simplified the logic for calculating the palindrome length. If a character count is even, it is fully used. If a character count is odd, we use count - 1 (the largest even number less than count), and set a flag hasOdd to true. Finally, if there is any odd count, we add one to the length to include one odd character in the center of the palindrome.
+        
         unordered_map<char, int> charCount;
         for (const char& c : s) {
             charCount[c]++;
