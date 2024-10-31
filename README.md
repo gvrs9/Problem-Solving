@@ -8,6 +8,7 @@ Collection of LeetCode, GeeksForGeeks and various other problem solving website'
 | ------- |
 | [0001-two-sum](https://github.com/gvrs9/Problem-Solving/tree/master/0001-two-sum) |
 | [0053-maximum-subarray](https://github.com/gvrs9/Problem-Solving/tree/master/0053-maximum-subarray) |
+| [0215-kth-largest-element-in-an-array](https://github.com/gvrs9/Problem-Solving/tree/master/0215-kth-largest-element-in-an-array) |
 ## Hash Table
 |  |
 | ------- |
@@ -17,6 +18,7 @@ Collection of LeetCode, GeeksForGeeks and various other problem solving website'
 |  |
 | ------- |
 | [0053-maximum-subarray](https://github.com/gvrs9/Problem-Solving/tree/master/0053-maximum-subarray) |
+| [0215-kth-largest-element-in-an-array](https://github.com/gvrs9/Problem-Solving/tree/master/0215-kth-largest-element-in-an-array) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -29,4 +31,16 @@ Collection of LeetCode, GeeksForGeeks and various other problem solving website'
 |  |
 | ------- |
 | [0013-roman-to-integer](https://github.com/gvrs9/Problem-Solving/tree/master/0013-roman-to-integer) |
+## Sorting
+|  |
+| ------- |
+| [0215-kth-largest-element-in-an-array](https://github.com/gvrs9/Problem-Solving/tree/master/0215-kth-largest-element-in-an-array) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0215-kth-largest-element-in-an-array](https://github.com/gvrs9/Problem-Solving/tree/master/0215-kth-largest-element-in-an-array) |
+## Quickselect
+|  |
+| ------- |
+| [0215-kth-largest-element-in-an-array](https://github.com/gvrs9/Problem-Solving/tree/master/0215-kth-largest-element-in-an-array) |
 <!---LeetCode Topics End-->
