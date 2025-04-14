@@ -1,0 +1,13 @@
+---
+BasedOnStyle: Google
+IndentWidth: 4
+IndentCaseLabels: true
+AccessModifierOffset: -4
+IndentAccessModifiers: false
+AlignTrailingComments: true
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+BreakBeforeBinaryOperators: false
+SortIncludes: false
+NamespaceIndentation: All
